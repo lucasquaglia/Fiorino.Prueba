@@ -39,6 +39,3 @@ class Alumnoo (object):
             cantidad += 1
 
         return suma/cantidad
-
-
-
