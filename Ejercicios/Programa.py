@@ -1,6 +1,8 @@
-from Clases.Mascota import Mascotaa
+from Clases.Alumno import Alumnoo
+from datetime import date
 
-miMascota = Mascotaa()
-miMascota.setNombre("Sasha")
-miMascota.setTipo("Velociraptor")
-print(miMascota.quienSoy())
+a = Alumnoo ()
+a.setNombre("Santiago")
+a.setApellido("Fiorino")
+a.setNacimiento(date(2000,3,4))
+

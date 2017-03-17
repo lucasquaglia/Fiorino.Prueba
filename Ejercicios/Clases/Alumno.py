@@ -18,24 +18,10 @@ class Alumnoo (object):
         (self.notas).append(d)
 
     def setMenor(self):
-        menor = notas[0]
-        for nota in notas
-            if(nota < menor)
-                menor = nota
-        return menor
+        return min(self.notas)
 
     def setMayor(self):
-        mayor = notas[0]
-        for nota in notas
-            if(nota > mayor)
-                mayor = nota
-        return mayor
+        return max(self.notas)
 
     def setPromedio(self):
-        suma = 0
-        cantidad = 0
-        for nota in notas:
-            suma = suma + nota
-            cantidad += 1
-
-        return suma/cantidad
+        return sum(self.notas)/len(self.notas)
