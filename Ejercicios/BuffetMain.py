@@ -12,8 +12,13 @@ while 1:
     print("3) Agregar Plato")
     print("4) Agregar Pedido")
     print("-----------------------")
-    print("5) Eliminar Alumno")
+    print("5) Eliminar Persona")
+    print("6) Modificar Persona")
+    print("-----------------------")
+    print("7) Guardar")
+
     dato = int(input())
+
     if dato == 1:
         alumnoAux = Alumno()
         print("Nombre:")
@@ -24,7 +29,7 @@ while 1:
         alumnoAux.Division = input()
         print("DNI: ")
         alumnoAux.DNI = input()
-        Poli.listaPersonas.append(AlumnoAux)
+        Poli.listaPersonas.append(alumnoAux)
     elif dato == 2:
         profeAux = Profesor()
         print("Nombre:")
@@ -62,9 +67,35 @@ while 1:
                 pedidoAux.Plato = platos
         pedidoAux.seEntrego = False
     elif dato == 5:
-        print("DNI de Alumno:")
+        print("DNI:")
         dni = input()
         for person in Poli.listaPersonas:
             if person.DNI == dni:
-                Poli.eliminarAlumno(person)
+                Poli.eliminarPersona(person)
                 break
+    elif dato == 6:
+        print("DNI:")
+        dni = input()
+        for person in Poli.listaPersonas:
+            if person.DNI == dni:
+                print("1) Modificar Nombre")
+                print("2) Modificar Apellido")
+                print("3) Modificar Descuento")
+                dato2 = int(input())
+                if dato2 == 1:
+                    print("Nombre:")
+                    person.Nombre = input()
+                elif dato2 == 2:
+                    print("Apellido:")
+                    person.Apellido = input()
+                elif dato2 == 3:
+                    if person.getDescuento() == 0:
+                        print("Un alumno no puede tener descuento")
+                        input()
+                        break
+                    else:
+                        print("Descuento: ")
+                        desc = input()
+                        person.Descuento = desc
+    elif dato == 7:
+        Poli.guardar()

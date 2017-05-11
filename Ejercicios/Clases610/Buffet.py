@@ -25,7 +25,14 @@ class Colegio(object):
             if person == personita:
                 listaPersonas.remove(personita)
                 break
-
+    def guardar(self):
+        f = open("archivo.txt","w")
+        for persona in self.listaPersonas:
+            f.write("1" + "|" +persona.Nombre + "|" + persona.Apellido           #1 porque es un alumno
+                    + "|" + persona.DNI + "|" + str(persona.getDescuento()) + '\n')
+        for plato in self.listaPlatos:
+            f.write("2" + "|" + plato.Nombre + "|" + plato.Precio)       #2 porque es un plato
+        f.close()
 class Persona(object):
     Nombre = ""
     Apellido = ""
@@ -36,19 +43,16 @@ class Persona(object):
         self.Apellido = apellido
     def getDescuento(self):
         return 0
-
 class Alumno(Persona):
     Division = ""
     def setDivision(self,division):
         self.Division = division
-
 class Profesor(Persona):
     Descuento = 0
     def setDescuento(self,descuento):
         self.Descuento = descuento
     def getDescuento(self):
         return  self.Descuento
-
 class Plato(object):
     Nombre = ""
     Precio = 0
@@ -56,7 +60,6 @@ class Plato(object):
         self.Nombre = nombre
     def setPrecio(self,precio):
         self.Precio = precio
-
 class Pedido(object):
     fechaEntrega = None
     Comprador = None
