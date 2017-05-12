@@ -1,4 +1,5 @@
 from Clases610.Buffet import *
+hols me gusta xd
 
 Poli = Colegio()
 alumnoAux = Alumno()
